@@ -1,0 +1,43 @@
+h1{
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 12px;
+    max-width: fit-content;
+}
+
+h3{
+    font-size: 12px;
+}
+
+
+.content-section{
+    display: flex;
+    margin-bottom: 50px;
+}
+.left-section{
+    display: table-column;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.right-section{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+
+.product-row{
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
