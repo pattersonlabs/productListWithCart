@@ -1,21 +1,22 @@
+// We need to create product card using the data passed in index.js
 
+import {addToCart} from './cart.js'
+export function productCard(product){
+    let element = document.createElement('div')
+    element.classList.add = ('productCards');
 
-export function productCard(singleProduct) {
-    const element = document.createElement('div')
-    element.classList.add('item-card')
     element.innerHTML = `
-    <img src="${singleProduct.image.thumbnail} ">
-    <h3>${singleProduct.category}</h3>
-              <h2>${singleProduct.name}</h2>
-              <div class="price">${singleProduct.price}</div>
-              <button class="add-cart-btn">to Cart</button>
-              
-    `
-    const addCartBtn = element.querySelector('.add-cart-btn');
-    addCartBtn.addEventListener('click', e => {
-        if (e.target.matches('.add-cart-btn')){
-        console.log('I have been clicked')
-        }
+    <img src = ${product.image.thumbnail}>
+    <h3 class = 'product-category'>${product.category}</h3>
+    <h2 class = 'product-name'>${product.name}</h2>
+    <p class = 'product-price'>${product.price}</p>
+    <button type = 'button' class = 'add-to-cart-btn'>Add to Cart</button>
+   `
+
+    const addToCartButton = element.querySelector('.add-to-cart-btn');
+    console.log(addToCartButton)
+    addToCartButton.addEventListener('click', e => {
+        addToCart(product)
     })
-    return element;
+   return element
 }

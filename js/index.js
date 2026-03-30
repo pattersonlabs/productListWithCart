@@ -1,12 +1,10 @@
-import {data} from '../js/data.js'
-import { productCard } from '../js/productCards.js';
+import {data} from './data.js';
+import {productCard} from './productCards.js'
+const grid = document.querySelector('.main-grid')
 
-const grid = document.querySelector('.main-grid');
-
-for (let i = 0; i < data.length; i++){
-    let product = data[i];
-    let productElement = productCard(product)
-    grid.appendChild(productElement);
+for ( let i = 0; i < data.length; i++){
+    let product = data[i]
+    const card = productCard(product)
+    grid.appendChild(card)
 }
 
-console.log(data);

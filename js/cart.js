@@ -1,3 +1,5 @@
-// Cart functionality (Delete)
-const shoppingCart = []
 
+
+export function addToCart(product){
+    
+}
