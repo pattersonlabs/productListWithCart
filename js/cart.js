@@ -1,6 +1,6 @@
 import { renderCart } from "./renderCart.js";
 
-let cart = [];
+export let cart = [];
 
 export function addToCart(product) {
   const existingItem = cart.find((item) => item.productName === product.name);

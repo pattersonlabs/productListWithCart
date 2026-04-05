@@ -13,6 +13,11 @@ export function renderCart(cart) {
                 <p class = 'product-price'>@$${cart[i].productPrice.toFixed(2)}</p>
                 <p class = 'total-price'>Total Price: $${productTotalValue.toFixed(2)} </p>
                 <p class = 'product-quantity'>${cart[i].productQuantity}x</p>
+                <button 
+                type ='button'
+                class = 'remove-cart-btn'
+                data-remove-id = '${cart[i].productId}'
+                >Delete Item </button>
             `;
     cartArea.appendChild(element);
   }

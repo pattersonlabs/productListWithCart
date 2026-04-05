@@ -10,12 +10,11 @@ export function productCard(product) {
     <img src = '${product.image.thumbnail}'>
     <h3 class = 'product-category'>${product.category}</h3>
     <h2 class = 'product-name'>${product.name}</h2>
-    <p class = 'product-price'>${product.price}</p>
+    <p class = 'product-price'>$${product.price.toFixed(2)}</p>
     <button type = 'button' class = 'add-to-cart-btn'>Add to Cart</button>
    `;
 
   const addToCartButton = element.querySelector(".add-to-cart-btn");
-  console.log(addToCartButton);
   addToCartButton.addEventListener("click", (e) => {
     addToCart(product);
   });
