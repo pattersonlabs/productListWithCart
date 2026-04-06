@@ -10,6 +10,9 @@ export function addToCart(product, add = true) {
       existingItem.productQuantity++;
     } else {
       existingItem.productQuantity--;
+      if (existingItem.productQuantity <= 0) {
+        cart.splice(cart.indexOf(existingItem), 1);
+      }
     }
   } else {
     let itemInCart = {
