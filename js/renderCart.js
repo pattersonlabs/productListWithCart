@@ -1,9 +1,11 @@
 export function renderCart(cart) {
   const cartArea = document.querySelector("#shopping-cart");
+  const totalBasketAmount = document.querySelector("#total-order-amount");
   cartArea.innerHTML = "";
-
+  let total = 0;
   for (let i = 0; i < cart.length; i++) {
     let productTotalValue = cart[i].productQuantity * cart[i].productPrice;
+    total += productTotalValue;
     let element = document.createElement("div");
     element.classList.add("cart-items");
     element.setAttribute("id", "cartDisplay");
@@ -21,4 +23,5 @@ export function renderCart(cart) {
             `;
     cartArea.appendChild(element);
   }
+  totalBasketAmount.innerText = `$${total.toFixed(2)}`;
 }

@@ -2,11 +2,15 @@ import { renderCart } from "./renderCart.js";
 
 export let cart = [];
 
-export function addToCart(product) {
+export function addToCart(product, add = true) {
   const existingItem = cart.find((item) => item.productName === product.name);
 
   if (existingItem) {
-    existingItem.productQuantity++;
+    if (add) {
+      existingItem.productQuantity++;
+    } else {
+      existingItem.productQuantity--;
+    }
   } else {
     let itemInCart = {
       productName: product.name,
@@ -18,4 +22,5 @@ export function addToCart(product) {
   }
 
   renderCart(cart);
+  return existingItem?.productQuantity ?? 1;
 }

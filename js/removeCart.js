@@ -8,7 +8,6 @@ import { cart } from "./cart.js";
 const cartGrid = document.querySelector("#shopping-cart");
 
 cartGrid.addEventListener("click", (e) => {
-  console.log("Listener attached");
   const currentCart = cart;
 
   if (e.target.matches(".remove-cart-btn")) {
